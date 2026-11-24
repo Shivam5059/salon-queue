@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: tricky-heat-salon
+    runtime: python
+    plan: free
+    buildCommand: bash build.sh
+    startCommand: gunicorn salon_queue.wsgi:application
+    envVars:
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DEBUG
+        value: "False"
+      - key: STAFF_PIN
+        value: "5059"
+      - key: DATABASE_NAME
+        value: /var/lib/tricky-heat/db.sqlite3
+      - key: PYTHON_VERSION
+        value: "3.12.7"

@@ -1,0 +1,14 @@
+{
+  "builds": [
+    {
+      "src": "salon_queue/wsgi.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "salon_queue/wsgi.py"
+    }
+  ]
+}

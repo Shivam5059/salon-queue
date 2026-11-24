@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="account-page">
+  <header class="page-intro">
+    <p class="eyebrow">STAFF ACCESS</p>
+    <h1>Enter staff PIN</h1>
+    <p>This screen is available to reception and barbers.</p>
+  </header>
+  {% if staff_pin_error %}<div class="form-errors" role="alert"><p>{{ staff_pin_error }}</p></div>{% endif %}
+  <form class="account-form" method="post">
+    {% csrf_token %}
+    <label class="field">
+      <span>Test PIN</span>
+      <input type="password" name="pin" inputmode="numeric" autocomplete="off" pattern="[0-9]*" maxlength="12" required autofocus>
+    </label>
+    <button class="button button-primary" type="submit">Unlock screen <span aria-hidden="true">&rarr;</span></button>
+  </form>
+</section>
+{% endblock %}
