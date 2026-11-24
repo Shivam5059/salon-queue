@@ -2,6 +2,7 @@
 
 # Prompts + Their effect + short summary
 
+- User supplied Render and GitHub credentials, asked for deployment, and accepted the Render hosting choice. Published the project to GitHub, created the Render free-tier Python web service, authorized the Render CLI, validated render.yaml, and configured the live demo URL and staff PIN.
 - User asked to prepare the Django app for Vercel/Render or Railway deployment and put the live URL and test PIN in the README. Added Render/Railway/Vercel deployment configuration, production settings, Gunicorn/WhiteNoise dependencies, persistent-SQLite guidance, a shared Reception/Barber test PIN gate with session authorization, and deployment documentation; verified Django checks and 9 tests.
 - User asked for a repeatable database population script with five barbers, 20–25 customers, 10–15 waiting, one barber on break, and varied queues for the others. Added a Django management command that preserves existing customer accounts and queue records, seeds 22 total customers (15 waiting), four occupied barbers with queue lengths 2/3/4/5, and one barber on break.
 - User asked for customer login using mobile, name and password, saved details on queue joins, and an active appointment card on Home. Added Django-auth-backed accounts with hashed passwords, linked online queue entries to accounts, used saved identity on signed-in joins, displayed active appointment details on Home in a bright pink card, and added focused account/queue tests.
